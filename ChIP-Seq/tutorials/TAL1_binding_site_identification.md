@@ -92,9 +92,17 @@ As for any NGS data analysis, ChIP-seq data must be quality controlled before be
     
 3. In Galaxy, examine the data in a FASTQ file by clicking on the eye icon.
 
-    | :grey_question: Questions |
-    |:---|
-    | <ul><li>What are four key features of a FASTQ file?</li><li>What is the main difference between a FASTQ and a FASTA file?</li></ul> |
+    > ### :question: Questions
+    >
+    > 1. What are four key features of a FASTQ file?
+    > 2. What is the main difference between a FASTQ and a FASTA file?
+    > 
+    >    <details>
+    >    <summary>Click to view answers</summary>
+    >    1. (1) A header line identifying the sequenced read, (2) a string representing the base calls, (3) a second header line, and (4) a string representing the base call qualities.
+    >    2. A FASTQ file contains base quality information, while a FASTA file does not.
+    >    </details>
+    {: .question}
     
 4. Run the tool `FastQC` on each FASTQ file to assess the quality of the raw data. An explanation of the results can be found on the [FastQC web page](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
 
