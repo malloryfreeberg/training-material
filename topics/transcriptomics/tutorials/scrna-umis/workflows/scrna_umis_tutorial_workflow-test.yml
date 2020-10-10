@@ -1,0 +1,24 @@
+---
+- doc: Test sample data for the workflow
+  job:
+    test_barcodes_celseq2_R1.fastq.gz:
+      class: File
+      location: https://zenodo.org/record/2573177/files/test_barcodes_celseq2_R1.fastq.gz
+      filetype: fastqsanger.gz
+    test_barcodes_celseq2_R2.fastq.gz:
+      class: File
+      location: https://zenodo.org/record/2573177/files/test_barcodes_celseq2_R2.fastq.gz
+      filetype: fastqsanger.gz
+    Pasted_Entry:
+      class: File
+      location: https://zenodo.org/record/2582555/files/SLGFSK-T_231336_r1_chr5_12_17.fastq.gz
+      filetype: fastqsanger.gz
+  outputs:
+    Read_1_extract:
+      asserts:
+        has_text:
+          text: 'TTTTTTTTTTTTTTTTTT'
+    Read_2_extract:
+      asserts:
+        has_text:
+          text: 'GACCTCTGATCTTTACGAAAGGCCAACGCGTTTTCAGTCTGGACACGGTTCAGCTCCTGTTCATTATTCA'

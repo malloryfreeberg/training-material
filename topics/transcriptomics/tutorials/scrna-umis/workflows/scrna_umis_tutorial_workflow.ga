@@ -65,18 +65,18 @@
             "inputs": [
                 {
                     "description": "",
-                    "name": "Pasted Entry"
+                    "name": "Pasted_Entry"
                 }
             ],
-            "label": "Pasted Entry",
-            "name": "Input dataset",
+            "label": "Pasted_Entry",
+            "name": "Pasted_Entry",
             "outputs": [],
             "position": {
                 "left": 200,
                 "top": 440
             },
             "tool_id": null,
-            "tool_state": "{\"optional\": false}",
+            "tool_state": "{\"name\": \"Pasted_Entry\"}",
             "tool_version": null,
             "type": "data_input",
             "uuid": "c1ae5d88-b5f3-4902-9367-4011c0d0f17d",
@@ -236,10 +236,15 @@
             "tool_version": "0.5.5.1",
             "type": "tool",
             "uuid": "7f223cc8-a361-480f-b605-80ed08d57d2e",
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {"output_name": "out1", "label": "Read_1_extract"},
+                {"output_name": "out2", "label": "Read_2_extract"}
+            ]
         }
     },
-    "tags": [],
+    "tags": [
+        "transcriptomics"
+    ],
     "uuid": "6c77d496-c640-4bdd-b2c2-cf26a2cd2ecf",
     "version": 1
 }
