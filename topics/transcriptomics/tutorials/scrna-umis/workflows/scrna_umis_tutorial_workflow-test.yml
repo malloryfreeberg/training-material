@@ -11,8 +11,8 @@
       filetype: fastqsanger.gz
     Pasted_Entry:
       class: File
-      location: https://zenodo.org/record/2582555/files/SLGFSK-T_231336_r1_chr5_12_17.fastq.gz
-      filetype: fastqsanger.gz
+      location:
+      filetype: tabular
   outputs:
     Read_1_extract:
       asserts:
