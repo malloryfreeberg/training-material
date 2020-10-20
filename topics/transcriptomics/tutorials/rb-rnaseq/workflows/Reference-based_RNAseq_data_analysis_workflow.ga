@@ -1,0 +1,388 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Reference-based RNAseq data analysis",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "WT input dataset collection"
+                }
+            ],
+            "label": "WT input dataset collection",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 190,
+                "top": 201
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"collection_type\": \"list:paired\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "27eedc77-ad12-4d05-961d-19db35ddefb1",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "KO input dataset collection"
+                }
+            ],
+            "label": "KO input dataset collection",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 196,
+                "top": 465
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"collection_type\": \"list:paired\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "27064eab-9ad7-44f3-a0eb-199c33af2d97",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "ensembl_dm3.chr4.gtf"
+                }
+            ],
+            "label": "ensembl_dm3.chr4.gtf",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 204,
+                "top": 600
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "45bd987a-cdc5-45ac-abf5-f910470ab9fd",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "left": 476,
+                "top": 204
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "tool_shed_repository": {
+                "changeset_revision": "0c16cad5e03b",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv\": {\"input_options\": {\"input_options_selector\": \"advanced\", \"__current_case__\": 1, \"skip\": \"0\", \"qupto\": \"0\", \"trim5\": \"0\", \"trim3\": \"0\", \"qv_encoding\": \"--phred33\", \"solexa_quals\": \"false\", \"int_quals\": \"false\"}, \"alignment_options\": {\"alignment_options_selector\": \"advanced\", \"__current_case__\": 1, \"function_type\": \"L\", \"constant_term\": \"0.0\", \"coefficient\": \"0.15\", \"ignore_quals\": \"false\", \"skip_forward\": \"false\", \"skip_reverse\": \"false\"}, \"scoring_options\": {\"scoring_options_selector\": \"advanced\", \"__current_case__\": 1, \"constant_term\": \"0.0\", \"coefficient\": \"-0.2\", \"max_mismatch\": \"6\", \"min_mismatch\": \"2\", \"soft_clip_penalty_max\": \"2\", \"soft_clip_penalty_min\": \"1\", \"no_softclip\": \"false\", \"ambiguous_penalty\": \"1\", \"read_open_penalty\": \"5\", \"read_extend_penalty\": \"3\", \"ref_open_penalty\": \"5\", \"ref_extend_penalty\": \"3\", \"function_type\": \"L\"}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": null, \"tma\": \"\", \"notmplen\": \"false\", \"novel_splicesite_outfile\": \"false\"}, \"reporting_options\": {\"reporting_options_selector\": \"advanced\", \"__current_case__\": 1, \"max_primary\": \"\"}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"library\": {\"type\": \"paired_collection\", \"__current_case__\": 2, \"input_1\": {\"__class__\": \"ConnectedValue\"}, \"rna_strandness\": \"FR\", \"paired_options\": {\"paired_options_selector\": \"advanced\", \"__current_case__\": 1, \"fr_rf_ff\": \"--fr\", \"no_mixed\": \"false\", \"no_discordant\": \"false\"}}, \"reference_genome\": {\"source\": \"indexed\", \"__current_case__\": 0, \"index\": \"dm3\"}, \"sum\": {\"new_summary\": \"false\", \"summary_file\": \"false\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.0+galaxy5",
+            "type": "tool",
+            "uuid": "28a30128-d686-4f6e-935a-e7ea642f40ac",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_alignments",
+                    "uuid": "c883d829-3ccf-400e-8d7d-aec9cebbed16"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "left": 494,
+                "top": 459
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "tool_shed_repository": {
+                "changeset_revision": "0c16cad5e03b",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv\": {\"input_options\": {\"input_options_selector\": \"advanced\", \"__current_case__\": 1, \"skip\": \"0\", \"qupto\": \"0\", \"trim5\": \"0\", \"trim3\": \"0\", \"qv_encoding\": \"--phred33\", \"solexa_quals\": \"false\", \"int_quals\": \"false\"}, \"alignment_options\": {\"alignment_options_selector\": \"advanced\", \"__current_case__\": 1, \"function_type\": \"L\", \"constant_term\": \"0.0\", \"coefficient\": \"0.15\", \"ignore_quals\": \"false\", \"skip_forward\": \"false\", \"skip_reverse\": \"false\"}, \"scoring_options\": {\"scoring_options_selector\": \"advanced\", \"__current_case__\": 1, \"constant_term\": \"0.0\", \"coefficient\": \"-0.2\", \"max_mismatch\": \"6\", \"min_mismatch\": \"2\", \"soft_clip_penalty_max\": \"2\", \"soft_clip_penalty_min\": \"1\", \"no_softclip\": \"false\", \"ambiguous_penalty\": \"1\", \"read_open_penalty\": \"5\", \"read_extend_penalty\": \"3\", \"ref_open_penalty\": \"5\", \"ref_extend_penalty\": \"3\", \"function_type\": \"L\"}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": null, \"tma\": \"\", \"notmplen\": \"false\", \"novel_splicesite_outfile\": \"false\"}, \"reporting_options\": {\"reporting_options_selector\": \"advanced\", \"__current_case__\": 1, \"max_primary\": \"\"}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"library\": {\"type\": \"paired_collection\", \"__current_case__\": 2, \"input_1\": {\"__class__\": \"ConnectedValue\"}, \"rna_strandness\": \"FR\", \"paired_options\": {\"paired_options_selector\": \"advanced\", \"__current_case__\": 1, \"fr_rf_ff\": \"--fr\", \"no_mixed\": \"false\", \"no_discordant\": \"false\"}}, \"reference_genome\": {\"source\": \"indexed\", \"__current_case__\": 0, \"index\": \"dm3\"}, \"sum\": {\"new_summary\": \"false\", \"summary_file\": \"false\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.0+galaxy5",
+            "type": "tool",
+            "uuid": "4b696261-8844-4d62-9cf9-d6dd0f6122bc",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_alignments",
+                    "uuid": "8c5704f1-4b17-4b53-b788-f02e14957277"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 473,
+                "top": 674
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"gtf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"cond\": \"c7!=\\\".\\\"\", \"header_lines\": \"0\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "94adacc2-1229-496e-ad01-3356e75bfe18",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "1e38ef75-6340-47c6-bf15-9db65bb02665"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/lparsons/htseq_count/htseq_count/0.9.1+galaxy1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "gfffile": {
+                    "id": 5,
+                    "output_name": "out_file1"
+                },
+                "samfile": {
+                    "id": 3,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "htseq-count",
+            "outputs": [
+                {
+                    "name": "counts",
+                    "type": "tabular"
+                },
+                {
+                    "name": "othercounts",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 776,
+                "top": 205
+            },
+            "post_job_actions": {
+                "HideDatasetActionothercounts": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "othercounts"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/lparsons/htseq_count/htseq_count/0.9.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "916cb26bd9d3",
+                "name": "htseq_count",
+                "owner": "lparsons",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"advanced_options\": {\"advanced_options_selector\": \"simple\", \"__current_case__\": 0}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/dm3.len\", \"featuretype\": \"exon\", \"gfffile\": {\"__class__\": \"ConnectedValue\"}, \"idattr\": \"gene_id\", \"minaqual\": \"10\", \"mode\": \"union\", \"samfile\": {\"__class__\": \"ConnectedValue\"}, \"samfile|__identifier__\": \"WT_03\", \"stranded\": \"yes\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.9.1+galaxy1",
+            "type": "tool",
+            "uuid": "a63071a9-c63f-4dd7-aba4-30150b5cac13",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "counts",
+                    "uuid": "b7cfbe4d-06b5-4765-9c4e-942f03e883c4"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/lparsons/htseq_count/htseq_count/0.9.1+galaxy1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "gfffile": {
+                    "id": 5,
+                    "output_name": "out_file1"
+                },
+                "samfile": {
+                    "id": 4,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "htseq-count",
+            "outputs": [
+                {
+                    "name": "counts",
+                    "type": "tabular"
+                },
+                {
+                    "name": "othercounts",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 776,
+                "top": 459
+            },
+            "post_job_actions": {
+                "HideDatasetActionothercounts": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "othercounts"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/lparsons/htseq_count/htseq_count/0.9.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "916cb26bd9d3",
+                "name": "htseq_count",
+                "owner": "lparsons",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"advanced_options\": {\"advanced_options_selector\": \"simple\", \"__current_case__\": 0}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/dm3.len\", \"featuretype\": \"exon\", \"gfffile\": {\"__class__\": \"ConnectedValue\"}, \"idattr\": \"gene_id\", \"minaqual\": \"10\", \"mode\": \"union\", \"samfile\": {\"__class__\": \"ConnectedValue\"}, \"samfile|__identifier__\": \"KO_03\", \"stranded\": \"yes\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.9.1+galaxy1",
+            "type": "tool",
+            "uuid": "54ad183b-1075-4e4e-9140-a341f1ab8ead",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "counts",
+                    "uuid": "85cb2ff2-3d7e-4751-b12a-8f6046eaeb19"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "select_data|rep_factorName_0|rep_factorLevel_0|countsFile": {
+                    "id": 6,
+                    "output_name": "counts"
+                },
+                "select_data|rep_factorName_0|rep_factorLevel_1|countsFile": {
+                    "id": 7,
+                    "output_name": "counts"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "DESeq2",
+            "outputs": [
+                {
+                    "name": "deseq_out",
+                    "type": "tabular"
+                },
+                {
+                    "name": "plots",
+                    "type": "pdf"
+                }
+            ],
+            "position": {
+                "left": 1046,
+                "top": 203
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "71bacea10eee",
+                "name": "deseq2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"auto_mean_filter_off\": \"false\", \"batch_factors\": null, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/dm3.len\", \"esf\": \"\", \"fit_type\": \"1\", \"header\": \"true\", \"many_contrasts\": \"false\", \"normCounts\": \"false\", \"normRLog\": \"false\", \"normVST\": \"false\", \"outlier_filter_off\": \"false\", \"outlier_replace_off\": \"false\", \"pdf\": \"true\", \"select_data\": {\"how\": \"datasets_per_level\", \"__current_case__\": 1, \"rep_factorName\": [{\"__index__\": 0, \"factorName\": \"Conditions\", \"rep_factorLevel\": [{\"__index__\": 0, \"factorLevel\": \"WT\", \"countsFile\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 1, \"factorLevel\": \"KO\", \"countsFile\": {\"__class__\": \"ConnectedValue\"}}]}]}, \"tximport\": {\"tximport_selector\": \"count\", \"__current_case__\": 1}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.11.40.6+galaxy1",
+            "type": "tool",
+            "uuid": "64cd5974-bb29-4b26-80cf-70aca897ca38",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "deseq_out",
+                    "uuid": "62339561-9b56-4eb4-941b-7be407e86522"
+                },
+                {
+                    "label": null,
+                    "output_name": "plots",
+                    "uuid": "fd4f2684-95d4-441f-8d55-b06379968e41"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "d6e96805-b4bd-4395-80dc-8cf843a932cb",
+    "version": 1
+}
