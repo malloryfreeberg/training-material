@@ -1,6 +1,6 @@
 {
     "a_galaxy_workflow": "true",
-    "annotation": "",
+    "annotation": "Reference-based RNAseq data analysis",
     "format-version": "0.1",
     "name": "Reference-based RNAseq data analysis",
     "steps": {
@@ -13,18 +13,18 @@
             "inputs": [
                 {
                     "description": "",
-                    "name": "WT input dataset collection"
+                    "name": "wt_collection"
                 }
             ],
-            "label": "WT input dataset collection",
-            "name": "Input dataset collection",
+            "label": "wt_collection",
+            "name": "wt_collection",
             "outputs": [],
             "position": {
                 "left": 190,
                 "top": 201
             },
             "tool_id": null,
-            "tool_state": "{\"optional\": false, \"collection_type\": \"list:paired\"}",
+            "tool_state": "{\"name\": \"wt_collection\", \"collection_type\": \"list:paired\"}",
             "tool_version": null,
             "type": "data_collection_input",
             "uuid": "27eedc77-ad12-4d05-961d-19db35ddefb1",
@@ -39,18 +39,18 @@
             "inputs": [
                 {
                     "description": "",
-                    "name": "KO input dataset collection"
+                    "name": "ko_collection"
                 }
             ],
-            "label": "KO input dataset collection",
-            "name": "Input dataset collection",
+            "label": "ko_collection",
+            "name": "ko_collection",
             "outputs": [],
             "position": {
                 "left": 196,
                 "top": 465
             },
             "tool_id": null,
-            "tool_state": "{\"optional\": false, \"collection_type\": \"list:paired\"}",
+            "tool_state": "{\"name\": \"ko_collection\", \"collection_type\": \"list:paired\"}",
             "tool_version": null,
             "type": "data_collection_input",
             "uuid": "27064eab-9ad7-44f3-a0eb-199c33af2d97",
@@ -69,14 +69,14 @@
                 }
             ],
             "label": "ensembl_dm3.chr4.gtf",
-            "name": "Input dataset",
+            "name": "ensembl_dm3.chr4.gtf",
             "outputs": [],
             "position": {
                 "left": 204,
                 "top": 600
             },
             "tool_id": null,
-            "tool_state": "{\"optional\": false}",
+            "tool_state": "{\"name\": \"ensembl_dm3.chr4.gtf\"}",
             "tool_version": null,
             "type": "data_input",
             "uuid": "45bd987a-cdc5-45ac-abf5-f910470ab9fd",
@@ -370,19 +370,21 @@
             "uuid": "64cd5974-bb29-4b26-80cf-70aca897ca38",
             "workflow_outputs": [
                 {
-                    "label": null,
+                    "label": "deseq_diff_expr",
                     "output_name": "deseq_out",
                     "uuid": "62339561-9b56-4eb4-941b-7be407e86522"
                 },
                 {
-                    "label": null,
+                    "label": "deseq_diff_expr_plots",
                     "output_name": "plots",
                     "uuid": "fd4f2684-95d4-441f-8d55-b06379968e41"
                 }
             ]
         }
     },
-    "tags": [],
+  "tags": [
+    "transcriptomics"
+  ],
     "uuid": "d6e96805-b4bd-4395-80dc-8cf843a932cb",
     "version": 1
 }
