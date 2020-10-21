@@ -310,21 +310,69 @@ The best performing tools tend to be [edgeR](https://bioconductor.org/packages/r
 
 ## Let's try it
 
-### The data
+### Get data
 
-In this example we will use a downsampled version of simulated *Drosophila melanogaster* RNA-seq data used by Trapnell et al. [2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3334321/). These include two conditions (**C1** and **C2**), each containing three replicates (**R1**, **R2**, and **R3**) sequenced as a paired end library. Thus in total there are 12 fastq datasets.
+In this example we will use a downsampled version of simulated *Drosophila melanogaster* RNA-seq data used by Trapnell et al. [2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3334321/). These include two conditions (**C1** and **C2**), each containing three replicates (**R1**, **R2**, and **R3**) sequenced as a paired-end library. Thus in total there are 12 fastq datasets.
 
-Here is what to do to load the data:
-
-#### Loading the data and create dataset collections
-
- Go to the data library (ask your instructor) and select all fastq files. Then Click `to History` button:
-
-![Data libraries](../../images/rnaseq_library.png)
-
-The datasets will appear in your history:
-
-![RNASeq data in history](../../images/rnaseq_data_in_history.png)
+> ### {% icon hands_on %} Hands-on: Data upload
+>
+> 1. Create a new history for this tutorial and give it a meaningful name.
+>
+>    {% include snippets/create_new_history.md %}
+>
+>    {% include snippets/rename_history.md %}
+>
+> 1. Import the following files as `fastqsanger` datatype from
+>    [Zenodo](https://zenodo.org/record/1409427):
+>
+>    ```
+>    https://zenodo.org/record/1409427/files/WT_01_R1.fastq
+>    https://zenodo.org/record/1409427/files/WT_01_R2.fastq
+>    https://zenodo.org/record/1409427/files/WT_02_R1.fastq
+>    https://zenodo.org/record/1409427/files/WT_02_R2.fastq
+>    https://zenodo.org/record/1409427/files/WT_03_R1.fastq
+>    https://zenodo.org/record/1409427/files/WT_03_R2.fastq
+>    https://zenodo.org/record/1409427/files/KO_01_R1.fastq
+>    https://zenodo.org/record/1409427/files/KO_01_R2.fastq
+>    https://zenodo.org/record/1409427/files/KO_02_R1.fastq
+>    https://zenodo.org/record/1409427/files/KO_02_R2.fastq
+>    https://zenodo.org/record/1409427/files/KO_03_R1.fastq
+>    https://zenodo.org/record/1409427/files/KO_03_R2.fastq
+>    ```
+>    where the first six files represent the forward and reverse reads 
+>    data for three replicate **wild-type (WT)** samples, and the next six files represent
+>    forward and reverse reads for three replicate **knock-out (KO)** samples.
+> 
+>    {% include snippets/import_via_link.md format="fastqsanger" %}
+>
+>    Alternatively, the files may be available on your Galaxy server
+>    through a shared data library and can be imported directly from there.
+>
+>    {% include snippets/import_from_data_library.md %}
+>
+> 1. Ensure that all newly created datasets have datatypes set to `fastqsanger`
+>    and fix any wrong datatype assignment
+>
+>    {% include snippets/change_datatype.md datatype="fastqsanger" %}
+>
+> 1. Rename the datasets and add appropriate tags.
+>
+>    For datasets uploaded via a link, Galaxy will use the link
+>    address as the dataset name, which you can choose to shorten to
+>    just the file names.
+>
+>    {% include snippets/rename_dataset.md %}
+>
+> 1. Import the gene reference from chromosome 4 for `dm3`:
+>
+>    ```
+>    https://zenodo.org/record/1409427/files/ensembl_dm3.chr4.gtf
+>    ```
+>
+>    Make sure to specify the datatype as `gtf` in the import dialog.
+>
+>
+{: .hands_on}
 
 Twelve datasets make a lot of clicking necessary. To avoid this annoyance we will combine them into two collections - **c1** and **c2** as shown in the video below. Also, see this [tutorial]({{site.baseurl}}/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html) for yet another explanation of dataset collections.
  <div class="embed-responsive embed-responsive-16by9"><iframe src="https://player.vimeo.com/video/163625221" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
