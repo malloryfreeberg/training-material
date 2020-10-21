@@ -1,39 +1,43 @@
 ---
-- doc: "Test sample data for Transcriptomics:Refence-based"
+- doc: "Test sample data for workflow"
   job:
-    ensembl_dm3.chr4.gtf:
-      class: File
-      location: https://zenodo.org/record/1409427/files/ensembl_dm3.chr4.gtf
-      filetype: gtf
     wt_collection:
       class: Collection
       collection_type: 'list:paired'
       elements:
         - class: Collection
           type: paired
-          identifier: WT
+          identifier: WT_01
           elements:
-          - identifier: forward_WT_01
+          - identifier: forward
             class: File
             location: https://zenodo.org/record/1409427/files/WT_01_R1.fastq
             filetype: fastqsanger
-          - identifier: reverse_WT_01
+          - identifier: reverse
             class: File
             location: https://zenodo.org/record/1409427/files/WT_01_R2.fastq
             filetype: fastqsanger
-          - identifier: forward_WT_02
+        - class: Collection
+          type: paired
+          identifier: WT_02
+          elements:
+          - identifier: forward
             class: File
             location: https://zenodo.org/record/1409427/files/WT_02_R1.fastq
             filetype: fastqsanger
-          - identifier: reverse_WT_02
+          - identifier: reverse
             class: File
             location: https://zenodo.org/record/1409427/files/WT_02_R2.fastq
             filetype: fastqsanger
-          - identifier: forward_WT_03
+        - class: Collection
+          type: paired
+          identifier: WT_03
+          elements:
+          - identifier: forward
             class: File
             location: https://zenodo.org/record/1409427/files/WT_03_R1.fastq
             filetype: fastqsanger
-          - identifier: reverse_WT_03
+          - identifier: reverse
             class: File
             location: https://zenodo.org/record/1409427/files/WT_03_R2.fastq
             filetype: fastqsanger
@@ -43,32 +47,44 @@
       elements:
         - class: Collection
           type: paired
-          identifier: KO
+          identifier: KO_01
           elements:
-          - identifier: forward_KO_01
+          - identifier: forward
             class: File
             location: https://zenodo.org/record/1409427/files/KO_01_R1.fastq
             filetype: fastqsanger
-          - identifier: reverse_KO_01
+          - identifier: reverse
             class: File
             location: https://zenodo.org/record/1409427/files/KO_01_R2.fastq
             filetype: fastqsanger
-          - identifier: forward_KO_02
+        - class: Collection
+          type: paired
+          identifier: KO_02
+          elements:
+          - identifier: forward
             class: File
             location: https://zenodo.org/record/1409427/files/KO_02_R1.fastq
             filetype: fastqsanger
-          - identifier: reverse_KO_02
+          - identifier: reverse
             class: File
             location: https://zenodo.org/record/1409427/files/KO_02_R2.fastq
             filetype: fastqsanger
-          - identifier: forward_KO_03
+        - class: Collection
+          type: paired
+          identifier: KO_03
+          elements:
+          - identifier: forward
             class: File
             location: https://zenodo.org/record/1409427/files/KO_03_R1.fastq
             filetype: fastqsanger
-          - identifier: reverse_KO_03
+          - identifier: reverse
             class: File
             location: https://zenodo.org/record/1409427/files/KO_03_R2.fastq
             filetype: fastqsanger
+    ensembl_dm3.chr4.gtf:
+      class: File
+      location: https://zenodo.org/record/1409427/files/ensembl_dm3.chr4.gtf
+      filetype: gtf
   outputs:
     deseq_diff_expr:
       asserts:
