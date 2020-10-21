@@ -4,6 +4,7 @@
     "genome-annotation"
   ],
   "format-version": "0.1",
+  "annotation": "Genome Annotation With Maker",
   "name": "Genome Annotation With Maker",
   "version": 31,
   "steps": {
@@ -23,9 +24,14 @@
       "id": 0,
       "uuid": "a361a75e-5fa4-44ca-a4b7-cc9054a73054",
       "errors": null,
-      "name": "Input dataset",
-      "label": "Genome sequence",
-      "inputs": [],
+      "name": "Genome-sequence-chrIII",
+      "label": "Genome-sequence-chrIII",
+      "inputs": [
+            {
+                "description": "",
+                "name": "Genome-sequence-chrIII"
+            }
+      ],
       "position": {
         "top": 373,
         "left": 200
@@ -50,9 +56,14 @@
       "id": 1,
       "uuid": "6b3edbe9-085d-46ae-9ae3-96e876c003e0",
       "errors": null,
-      "name": "Input dataset",
-      "label": "EST and/or cDNA",
-      "inputs": [],
+      "name": "EST-and-or-cDNA",
+      "label": "EST-and-or-cDNA",
+      "inputs": [
+            {
+                "description": "",
+                "name": "EST-and-or-cDNA"
+            }
+      ],
       "position": {
         "top": 484,
         "left": 201
@@ -77,9 +88,14 @@
       "id": 2,
       "uuid": "ce4ee756-1713-4e6a-898c-b85a834712bc",
       "errors": null,
-      "name": "Input dataset",
+      "name": "Proteins",
       "label": "Proteins",
-      "inputs": [],
+      "inputs": [
+            {
+                "description": "",
+                "name": "Proteins"
+            }
+      ],
       "position": {
         "top": 576,
         "left": 200
@@ -1520,7 +1536,7 @@
         {
           "output_name": "busco_sum",
           "uuid": "c0c9f74e-7de1-4602-bc33-7b87cab6ae80",
-          "label": "Busco summary final round"
+          "label": "busco_sum"
         }
       ],
       "input_connections": {
