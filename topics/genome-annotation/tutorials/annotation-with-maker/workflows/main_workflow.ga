@@ -4,7 +4,7 @@
     "genome-annotation"
   ],
   "format-version": "0.1",
-  "annotation": "Genome Annotation With Maker",
+  "annotation": "Genome annotation with Maker",
   "name": "Genome Annotation With Maker",
   "version": 31,
   "steps": {
@@ -20,7 +20,7 @@
         }
       ],
       "input_connections": {},
-      "tool_state": "{}",
+      "tool_state": "{\"name\": \"Genome-sequence-chrIII\"}",
       "id": 0,
       "uuid": "a361a75e-5fa4-44ca-a4b7-cc9054a73054",
       "errors": null,
@@ -52,7 +52,7 @@
         }
       ],
       "input_connections": {},
-      "tool_state": "{}",
+      "tool_state": "{\"name\": \"EST-and-or-cDNA\"}",
       "id": 1,
       "uuid": "6b3edbe9-085d-46ae-9ae3-96e876c003e0",
       "errors": null,
@@ -84,7 +84,7 @@
         }
       ],
       "input_connections": {},
-      "tool_state": "{}",
+      "tool_state": "{\"name\": \"Proteins\"}",
       "id": 2,
       "uuid": "ce4ee756-1713-4e6a-898c-b85a834712bc",
       "errors": null,
@@ -1584,6 +1584,5 @@
       "type": "tool"
     }
   },
-  "annotation": "Genome annotation with Maker",
   "a_galaxy_workflow": "true"
 }
