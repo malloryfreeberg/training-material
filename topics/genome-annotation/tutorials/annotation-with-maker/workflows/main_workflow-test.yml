@@ -1,0 +1,20 @@
+---
+- doc: Test sample data for the workflow
+  job:
+    Genome-sequence-chrIII:
+      class: File
+      location: https://zenodo.org/api/files/4385871d-9632-4fae-9aaf-f8ed692163d1/S_pombe_chrIII.fasta
+      filetype: fasta
+    EST-and-or-cDNA:
+      class: File
+      location: https://zenodo.org/api/files/4385871d-9632-4fae-9aaf-f8ed692163d1/S_pombe_trinity_assembly.fasta
+      filetype: fasta
+    Proteins:
+      class: File
+      location: https://zenodo.org/api/files/4385871d-9632-4fae-9aaf-f8ed692163d1/Swissprot_no_S_pombe.fasta
+      filetype: fasta
+  outputs:
+    busco_sum:
+      asserts:
+        has_text:
+          text: 'dnaA'
