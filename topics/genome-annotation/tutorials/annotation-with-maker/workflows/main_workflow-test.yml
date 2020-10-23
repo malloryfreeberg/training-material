@@ -14,7 +14,27 @@
       location: https://zenodo.org/api/files/4385871d-9632-4fae-9aaf-f8ed692163d1/Swissprot_no_S_pombe.fasta
       filetype: fasta
   outputs:
-    busco_sum:
+    busco1:
       asserts:
         has_text:
-          text: 'dnaA'
+          text: '290'
+    busco2:
+      asserts:
+        has_text:
+          text: '290'
+    busco3:
+      asserts:
+        has_text:
+          text: '290'
+    genome_anno1:
+      asserts:
+        has_text:
+          text: '580.0'
+    genome_anno2:
+      asserts:
+        has_text:
+          text: '723.8'
+    genome_anno3:
+      asserts:
+        has_text:
+          text: '726.2'

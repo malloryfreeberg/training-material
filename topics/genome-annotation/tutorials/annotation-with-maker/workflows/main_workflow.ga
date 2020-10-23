@@ -556,7 +556,7 @@
         {
           "output_name": "summary",
           "uuid": "8af52c03-600f-4d4b-ba50-d30dadbba278",
-          "label": null
+          "label": "genome_anno1"
         }
       ],
       "input_connections": {
@@ -727,7 +727,7 @@
         {
           "output_name": "busco_sum",
           "uuid": "fb7d0b41-92b0-4839-aa4f-b65897eae521",
-          "label": "Busco summary first round"
+          "label": "busco1"
         }
       ],
       "input_connections": {
@@ -1008,7 +1008,7 @@
         {
           "output_name": "summary",
           "uuid": "d58e3714-a1dc-43c9-8799-9221776bb63d",
-          "label": null
+          "label": "genome_anno2"
         }
       ],
       "input_connections": {
@@ -1179,7 +1179,7 @@
         {
           "output_name": "busco_sum",
           "uuid": "0e5b73a6-a82a-42e0-9e79-389f87b32755",
-          "label": "Busco summary second round"
+          "label": "busco2"
         }
       ],
       "input_connections": {
@@ -1480,7 +1480,7 @@
         {
           "output_name": "summary",
           "uuid": "3b73d282-51ab-4997-9124-e1e5db62b849",
-          "label": null
+          "label": "genome_anno3"
         }
       ],
       "input_connections": {
@@ -1536,7 +1536,7 @@
         {
           "output_name": "busco_sum",
           "uuid": "c0c9f74e-7de1-4602-bc33-7b87cab6ae80",
-          "label": "busco_sum"
+          "label": "busco3"
         }
       ],
       "input_connections": {
